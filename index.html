@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pind Bazaar | Punjabi Shopping</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo">Pind Bazaar</a>
+    <a href="#cart" class="cart-link">Cart (<span id="cart-count">0</span>)</a>
+  </header>
+
+  <section class="hero">
+    <h1>Shop the Colours of Punjab</h1>
+    <p>Traditional products, handcrafted with love.</p>
+  </section>
+
+  <main class="container">
+    <h2>Our Products</h2>
+
+    <div class="filters">
+      <input id="search" type="search" placeholder="Search products...">
+      <select id="category">
+        <option value="All">All Categories</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Footwear">Footwear</option>
+        <option value="Food">Food</option>
+        <option value="Home">Home</option>
+        <option value="Accessories">Accessories</option>
+      </select>
+      <select id="sort">
+        <option value="default">Sort Products</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+        <option value="name">Name: A to Z</option>
+      </select>
+    </div>
+
+    <p id="no-products" hidden>No products found.</p>
+    <section id="product-list" class="products"></section>
+
+    <section id="cart" class="panel">
+      <h2>Your Shopping Cart</h2>
+      <div id="cart-items"></div>
+
+      <div class="totals">
+        <p>Subtotal: <strong id="subtotal">₹0</strong></p>
+        <p>Discount: <strong id="discount">₹0</strong></p>
+        <p class="grand-total">Total: <strong id="total">₹0</strong></p>
+      </div>
+
+      <div class="coupon-offer">
+        Save 10% on your order with code <strong>PIND10</strong>
+      </div>
+      <div class="coupon-row">
+        <input id="coupon" placeholder="Enter coupon code">
+        <button id="apply-coupon" type="button">Apply</button>
+      </div>
+      <p id="coupon-message" class="message" aria-live="polite"></p>
+    </section>
+
+    <section id="checkout" class="panel">
+      <h2>Checkout</h2>
+      <form id="checkout-form">
+        <label for="customer-name">Full Name</label>
+        <input id="customer-name" required placeholder="Enter your full name">
+
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="tel" inputmode="numeric"
+          pattern="[0-9]{10}" maxlength="10" required
+          placeholder="10-digit mobile number">
+
+        <label for="address">Delivery Address</label>
+        <textarea id="address" rows="3" required
+          placeholder="House number, street, city and PIN code"></textarea>
+
+        <label for="payment">Payment Method</label>
+        <select id="payment" required>
+          <option value="">Choose payment method</option>
+          <option value="Cash on Delivery">Cash on Delivery</option>
+          <option value="UPI">UPI</option>
+        </select>
+
+        <button type="submit" class="primary">Place Order</button>
+      </form>
+
+      <div id="order-success" class="success" hidden>
+        <h3>Order Placed Successfully!</h3>
+        <p id="order-details"></p>
+        <div id="order-items"></div>
+        <button id="continue-shopping" type="button">Continue Shopping</button>
+      </div>
+    </section>
+
+    <p id="message" class="message" aria-live="polite"></p>
+  </main>
+</body>
+</html>
